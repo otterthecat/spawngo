@@ -11,7 +11,10 @@
     "lib/"
   ],
   "scripts": {
-    "test": "standard && nyc ava test/*.js"
+    "lint": "standard",
+    "test": "ava test/*.js",
+    "posttest": "npm run lint",
+    "coverage": "nyc ava test/*.js"
   },
   "repository": {
     "type": "git",
