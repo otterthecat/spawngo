@@ -1,0 +1,39 @@
+{
+  "name": "spawngo",
+  "version": "1.0.0",
+  "description": "Spawn a child process for mongoimport/export",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "files": [
+    "index.js",
+    "lib/"
+  ],
+  "scripts": {
+    "test": "standard && nyc ava test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/otterthecat/spawngo.git"
+  },
+  "keywords": [
+    "mongodb",
+    "spawn",
+    "child_process",
+    "json",
+    "csv"
+  ],
+  "author": "Otter the Cat",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/otterthecat/spawngo/issues"
+  },
+  "homepage": "https://github.com/otterthecat/spawngo#readme",
+  "devDependencies": {
+    "ava": "^0.17.0",
+    "nyc": "^10.0.0",
+    "sinon": "^1.17.6",
+    "standard": "^8.6.0"
+  }
+}
