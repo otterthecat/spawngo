@@ -2,9 +2,13 @@
   "name": "spawngo",
   "version": "1.0.0",
   "description": "Spawn a child process for mongoimport/export",
+  "engines": {
+    "node": ">=6.9.0"
+  },
   "main": "index.js",
   "directories": {
-    "test": "test"
+    "test": "test",
+    "lib": "lib"
   },
   "files": [
     "index.js",
