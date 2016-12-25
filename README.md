@@ -29,7 +29,7 @@ childProcess.on('close', function (data) {
 })
 
 ```
-**Note** that [mongoDb sends ALL status updates to stderr](https://jira.mongodb.org/browse/DOCS-8817?focusedCommentId=1386587&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-1386587), so to better determin if your process was successful, you should check the returned status code from the`close` event returned a 0, and not rely on `stderr`.
+**Note** that [mongoDb sends ALL status updates to stderr](https://jira.mongodb.org/browse/DOCS-8817?focusedCommentId=1386587&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-1386587), so to better determine if your process was successful, you should ensure the status code from the`close` event returned a 0, and not rely on `stderr`.
 
 Exporting is nearly identical to the above, but instead of `import()`, you would call `export()`
 ```javascript
