@@ -34,3 +34,7 @@ test('generateUpsertFields() should return empty string if passed falsy value', 
 test('generateUpsertFields() should return upsert substring when passed array', function (t) {
   t.is(h.generateUpsertFields(['foo', 'bar']), '--upsertFields foo,bar')
 })
+
+test('generateInsertionWorkers() should return correct numInsertionWorkers setting', function (t) {
+  t.is(h.generateInsertionWorkers(2), '--numInsertionWorkers 2')
+})
