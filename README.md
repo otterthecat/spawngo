@@ -44,8 +44,10 @@ let childProcess = spawngo.export('collectionName')
  * pwd: ''
  * db: ''
  * collection: ''
- * jsonArray: true
- * upsertFields: undefined
+ * jsonArray: `true`
+ * upsertFields: `undefined`
+ * cpus: [default is number of machine's [cpu cores](https://nodejs.org/dist/latest-v6.x/docs/api/os.html#os_os_cpus)]
+ * drop: `false`
 
 Instead of passing `options` to constructor, you can also apply your settings by using the `.set()` function.
 

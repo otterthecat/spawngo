@@ -38,3 +38,8 @@ test('generateUpsertFields() should return upsert substring when passed array', 
 test('generateInsertionWorkers() should return correct numInsertionWorkers setting', function (t) {
   t.is(h.generateInsertionWorkers(2), '--numInsertionWorkers 2')
 })
+
+test('generateDrop() should return --drop flag only if argument is truthy', function (t) {
+  t.is(h.generateDrop(true), '--drop')
+  t.is(h.generateDrop(false), '')
+})
