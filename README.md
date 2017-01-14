@@ -31,7 +31,11 @@ childProcess.on('close', function (data) {
 ```
 **Note** that [mongoDb sends ALL status updates to stderr](https://jira.mongodb.org/browse/DOCS-8817?focusedCommentId=1386587&page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel#comment-1386587), so to better determine if your process was successful, you should ensure the status code from the`close` event returned a 0, and not rely on `stderr`.
 
-Exporting is nearly identical to the above, but instead of `import()`, you would call `export()`
+Exporting is nearly identical to the above, but instead of `import()`, you would call `export()` to export the collection as defined when *spawngo* was instantiated, or updated using `.set()`
+```javascript
+let childProcess = spawngo.export()
+```
+If you wish to export a different collection, but not alter the internal configurated collection, you can pass a string of the target collection,:
 ```javascript
 let childProcess = spawngo.export('collectionName')
 ```
@@ -61,7 +65,11 @@ If no user and password are set, then the call to `mongoimport` will not use aut
 
 **export(collection)**
 
-*collection (String)*: Name of the collection to export. The exported `json` file will be named after the collection (i.e `collectionName.json`).
+*collection (String [optional])*: Name of the collection to export. The exported `json` file will be named after the collection (i.e `collectionName.json`).
+
+The `string` aurgument is optional. Not passing a string will use the collect as defined internally either via the `constructor` settings, or from using `.set()`.
+
+Note that passsing a collection string in this manner will *NOT* alter the internal configuration.
 
 *returns*: ChildProcess of the spawned query.
 
